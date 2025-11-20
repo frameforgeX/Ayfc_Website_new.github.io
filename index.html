@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayawaso Youth for Christ - We Welcome You</title>
+    <meta name="description" content="AYFC exists to connect people to Jesus Christ so that all can experience a vibrant and lasting relationship with God.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Optional favicon -->
+    <!-- <link rel="icon" href="assets/imgs/favicon.ico" type="image/x-icon"> -->
 </head>
 <body>
     <!-- Top Bar -->
@@ -30,25 +33,26 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
-                    <a href="#home">
-                        <img src="assets/imgs/AYFC_Logo.png" alt="Oak Harbor Church Logo" class="logo-img">
+                    <a href="#hero">
+                        <img src="assets/imgs/AYFC_Logo.png" alt="AYFC Logo" class="logo-img">
                     </a>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#hero">HOME</a></li>
                     <li><a href="#about">ABOUT US</a></li>
                     <li><a href="#ministries">MINISTRIES</a></li>
                     <li><a href="#events">EVENTS</a></li>
                     <li><a href="#resources">RESOURCES</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
                 </ul>
-                <a href="https://forms.gle/ckQAtMym2ReYjY3Q6">
+                <a href="https://forms.gle/ckQAtMym2ReYjY3Q6" target="_blank" rel="noopener noreferrer">
                     <button class="btn-primary">JOIN US</button>
                 </a>
-                <div class="mobile-toggle">
+                <div class="mobile-toggle" aria-label="Open navigation menu">
                     <i class="fas fa-bars"></i>
                 </div>
             </div>
@@ -56,16 +60,16 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">WELCOME TO THE FAMILY</h1>
             <p class="hero-subtitle">AYFC exists to connect people to Jesus Christ so that all can experience a vibrant and lasting relationship with God</p>
             <div class="hero-buttons">
-                <a href="https://ayawasoyouthforchrist.pixieset.com/ayawasoyouthforchrist/">
+                <a href="https://ayawasoyouthforchrist.pixieset.com/ayawasoyouthforchrist/" target="_blank" rel="noopener noreferrer">
                     <button class="btn-outline-white">GALLERY</button>
                 </a>
-                <a href="https://forms.gle/ckQAtMym2ReYjY3Q6">
+                <a href="https://forms.gle/ckQAtMym2ReYjY3Q6" target="_blank" rel="noopener noreferrer">
                     <button class="btn-outline-white">JOIN US </button>
                 </a>
             </div>
@@ -73,18 +77,18 @@
     </section>
 
     <!-- About Us Section -->
-    <section class="features">
+    <section class="features" id="about">
         <div class="container">
             <h1>About Us</h1>
         </div>
     </section>
 
     <!-- Pastor Section -->
-    <section class="pastor-section">
+    <section class="pastor-section" id="pastor">
         <div class="container">
             <div class="pastor-content">
                 <div class="pastor-image">
-                    <img src="assets/imgs/head_pic.jpg" alt="Pastor Jeffrey Marsh">
+                    <img src="assets/imgs/head_pic.jpg" alt="Prophet Alexander Kweku Offei">
                 </div>
                 <div class="pastor-info">
                     <p class="section-label">MEET OUR PASTOR</p>
@@ -93,7 +97,9 @@
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
                     <div class="pastor-buttons">
                         <button class="btn-primary">LEARN MORE</button>
-                        <button class="btn-dark">LISTEN TO SERMONS</button>
+                        <a href="https://www.tiktok.com/@ayfc.official" target="_blank" rel="noopener noreferrer">
+                            <button class="btn-dark">LISTEN TO SERMONS</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -101,7 +107,7 @@
     </section>
 
     <!-- Events Section -->
-    <section class="events-section">
+    <section class="events-section" id="events">
         <div class="container">
             <h2 class="section-title">UPCOMING EVENTS</h2>
             <div class="events-grid">
@@ -140,7 +146,7 @@
     </section>
 
     <!-- Blog Section -->
-    <section class="blog-section">
+    <section class="blog-section" id="resources">
         <div class="container">
             <div class="blog-content">
                 <div class="blog-text">
@@ -172,7 +178,7 @@
         <div class="container">
             <div class="newsletter-content">
                 <h2>STAY UP TO DATE</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit voluptate.</p>
+                <p>ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit voluptate.</p>
                 <div class="newsletter-buttons">
                     <button class="btn-outline-white">JOIN OUR EMAIL LIST →</button>
                     <button class="btn-outline-white">FOLLOW OUR SOCIAL MEDIA PAGES ▶</button>
@@ -185,53 +191,35 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>HOME</h4>
-                </div>
-                <div class="footer-column">
-                    <h4>MINISTRIES</h4>
-                </div>
-                <div class="footer-column">
-                    <h4>EVENTS</h4>
-                </div>
-                <div class="footer-column">
-                    <h4>RESOURCES</h4>
-                </div>
-                <div class="footer-column">
-                    <h4>ABOUT US</h4>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>MEMBERS FORM</h4>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-info">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
-                    <button class="btn-outline-white small">CONTACT US</button>
-                </div>
-                <div class="footer-logo">
-                    
-                </div>
-                <div class="footer-contact">
-                    <p>Join us Online</p>
-                    <p>123 Main Street</p>
-                    <p>Oak Harbor, WA 98277</p>
-                    <p>(360) 123-4567</p>
+            <div class="footer-wrapper">
+                <!-- Social Icons -->
+                <div class="footer-social-section">
                     <div class="footer-social">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fas fa-rss"></i></a>
+                        <a href="https://instagram.com/ayfc.official20" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@ayfc.official" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://wa.me/233XXXXXXXXX" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
+
+                <!-- Contact Button -->
+                <div class="footer-contact-btn">
+                    <a href="contact.html" class="btn-contact">CONTACT US</a>
+                </div>
+
+                <!-- Copyright -->
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Ayawaso Youth for Christ. All Rights Reserved.</p>
+                </div>
             </div>
-        </div>
-        <div class="footer-copyright">
-            <p>© Abba Concepts. All Rights Reserved. Site Developed By FrameforgeX</p>
         </div>
     </footer>
 
