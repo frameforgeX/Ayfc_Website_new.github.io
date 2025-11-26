@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Opportunities of AYFC</title>
+    <style>
+        :root{
+            --bg:#f7f9fb;
+            --card:#ffffff;
+            --accent:#0b76ef;
+            --muted:#6b7280;
+            --radius:8px;
+            --shadow: 0 6px 18px rgba(16,24,40,0.06);
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+        body{
+            margin:0;
+            background:var(--bg);
+            color:#0f172a;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.4;
+            padding:28px;
+        }
+        .container{
+            max-width:900px;
+            margin:0 auto;
+        }
+        header.page-head{
+            display:flex;
+            align-items:flex-start;
+            justify-content:space-between;
+            gap:12px;
+            margin-bottom:16px;
+        }
+        header .title{ flex:1; }
+        header h1{
+            margin:0 0 6px 0;
+            font-size:1.25rem;
+            letter-spacing:-0.02em;
+        }
+        header p{ margin:0; color:var(--muted); font-size:0.95rem; }
+
+        .controls{
+            display:flex;
+            gap:8px;
+            align-items:center;
+            margin:14px 0 18px 0;
+            flex-wrap:wrap;
+        }
+        .search{
+            flex:1;
+            min-width:180px;
+            display:flex;
+            background:var(--card);
+            padding:6px 8px;
+            border-radius:999px;
+            box-shadow:var(--shadow);
+            align-items:center;
+            gap:8px;
+        }
+        .search input{
+            border:0;
+            outline:0;
+            font-size:0.9rem;
+            background:transparent;
+            width:100%;
+        }
+        .filters{ display:flex; gap:8px; flex-wrap:wrap; }
+        .filters button{
+            background:transparent;
+            border:1px solid rgba(15,23,42,0.06);
+            padding:6px 10px;
+            border-radius:8px;
+            cursor:pointer;
+            color:var(--muted);
+            font-size:0.85rem;
+        }
+        .filters button.active{
+            background:linear-gradient(90deg,var(--accent),#3aa0ff);
+            color:white;
+            border:0;
+            box-shadow:0 6px 18px rgba(11,118,239,0.08);
+        }
+
+        /* Smaller, very simple cards */
+        .opportunities-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+            gap:10px;
+        }
+        .opportunity{
+            background:var(--card);
+            border-radius:var(--radius);
+            padding:10px;
+            box-shadow:var(--shadow);
+            display:flex;
+            flex-direction:column;
+            gap:6px;
+            transition:transform .12s ease, box-shadow .12s ease;
+            border:1px solid rgba(15,23,42,0.04);
+            min-height:60px;
+            align-items:flex-start;
+            justify-content:center;
+        }
+        .opportunity:hover{
+            transform:translateY(-4px);
+            box-shadow:0 10px 24px rgba(16,24,40,0.08);
+        }
+        .opportunity h3{
+            margin:0;
+            font-size:0.95rem;
+            font-weight:700;
+        }
+        .opportunity p{
+            margin:0;
+            color:var(--muted);
+            font-size:0.82rem;
+            line-height:1.2;
+        }
+
+        /* hide previous complex elements if any remain */
+        .opportunity .meta,
+        .opportunity .tags,
+        .opportunity .actions,
+        .badge,
+        .tag,
+        .btn { display:none; }
+
+        @media (max-width:520px){
+            header{ flex-direction:column; align-items:flex-start; gap:8px; }
+            .opportunities-grid{ grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:8px; }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="page-head">
+            <div class="title">
+                <h1>Opportunities at AYFC</h1>
+                <p>Quick list — job title and a short description.</p>
+            </div>
+            <div style="text-align:right">
+                <small style="color:var(--muted)">Updated: Nov 26, 2025</small>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="search" role="search">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z"/></svg>
+                <input id="search" type="search" placeholder="Search title or brief" aria-label="Search opportunities">
+            </div>
+
+            <div class="filters" role="tablist" aria-label="Filter opportunities">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="volunteer">Volunteer</button>
+                <button class="filter-btn" data-filter="internship">Internship</button>
+                <button class="filter-btn" data-filter="event">Event</button>
+                <button class="filter-btn" data-filter="training">Training</button>
+            </div>
+        </div>
+
+        <section class="opportunities-grid" id="list">
+            <!-- Simplified items: only title + short brief -->
+            <article class="opportunity" data-type="volunteer" data-keywords="community outreach">
+                <h3>Sound Engineering training</h3>
+                <p>Practical instruction in audio recording, mixing, and live sound management.</p>
+            </article>
+
+            <article class="opportunity" data-type="internship" data-keywords="marketing digital remote">
+                <h3>Support for Startup Businesses (Entrepreneurship)</h3>
+                <p>Guidance, mentorship, and resources to help aspiring entrepreneurs launch and grow their business ideas.</p>
+            </article>
+
+            <article class="opportunity" data-type="event" data-keywords="forum networking">
+                <h3>Travel Opportunities for Missions and Exchange Programs</h3>
+                <p>Chances to visit other countries for mission work, cultural exchange, and personal development.</p>
+            </article>
+
+            <article class="opportunity" data-type="training" data-keywords="leadership workshop">
+                <h3>Educational Support (Bible School, Financial Assistance)</h3>
+                <p>Scholarships and financial aid to help students access Bible school training and pursue their academic goals.</p>
+            </article>
+
+            <article class="opportunity" data-type="volunteer" data-keywords="mentorship youth">
+                <h3>Assistance with School Applications Abroad</h3>
+                <p>Support in preparing and submitting applications to international schools, colleges, and universities.</p>
+            </article>
+
+            <article class="opportunity" data-type="internship" data-keywords="research policy">
+                <h3>Employment Support and Career Guidance</h3>
+                <p>Coaching and resources to help individuals find job opportunities and develop their career paths.</p>
+            </article>
+
+            <article class="opportunity" data-type="internship" data-keywords="research policy">
+                <h3>Mentorship and Discipleship Programs</h3>
+                <p>One-on-one and group mentoring focused on spiritual growth, personal development, and life skills.</p>
+            </article>
+
+            <article class="opportunity" data-type="internship" data-keywords="research policy">
+                <h3>Vocational Training Opportunities</h3>
+                <p>Hands-on training in practical skills to help individuals become employable and self-reliant.</p>
+            </article>
+
+            <article class="opportunity" data-type="internship" data-keywords="research policy">
+                <h3>Music and Creative Arts Development</h3>
+                <p>Support for developing talents in music, art, and creative expression through training and mentorship.</p>
+            </article>
+
+            <article class="opportunity" data-type="internship" data-keywords="research policy">
+                <h3>Football Development and Support</h3>
+                <p>Talent development, exposure, and guidance to help footballers improve their skills and access professional opportunities.</p>
+            </article>
+
+            <!-- Add more items using the same minimal structure -->
+        </section>
+    </main>
+
+    <script>
+        (function(){
+            const search = document.getElementById('search');
+            const buttons = Array.from(document.querySelectorAll('.filter-btn'));
+            const list = document.getElementById('list');
+            const items = Array.from(list.querySelectorAll('.opportunity'));
+            let activeFilter = 'all';
+
+            function normalize(s){ return (s||'').toLowerCase(); }
+
+            function matches(item, term, filter){
+                const type = item.dataset.type || '';
+                if(filter !== 'all' && type !== filter) return false;
+                if(!term) return true;
+                const title = normalize(item.querySelector('h3').textContent);
+                const desc = normalize(item.querySelector('p').textContent);
+                const keys = normalize(item.dataset.keywords || '');
+                return title.includes(term) || desc.includes(term) || keys.includes(term);
+            }
+
+            function render(){
+                const term = normalize(search.value.trim());
+                items.forEach(it => {
+                    it.style.display = matches(it, term, activeFilter) ? '' : 'none';
+                });
+            }
+
+            search.addEventListener('input', render);
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    activeFilter = btn.dataset.filter || 'all';
+                    render();
+                });
+            });
+
+            window.addEventListener('keydown', e => {
+                if(e.key === '/') {
+                    if(document.activeElement.tagName.toLowerCase() !== 'input') {
+                        e.preventDefault();
+                        search.focus();
+                    }
+                }
+            });
+
+            render();
+        })();
+    </script>
+</body>
+</html>
